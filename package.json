@@ -1,0 +1,20 @@
+{
+  "name": "tech-demo",
+  "version": "1.0.0",
+  "description": "A node tech demo",
+  "main": "server.js",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com:owencjones/node-tech-demo.git"
+  },
+  "author": "Owen C Jones",
+  "license": "ISC"
+}
