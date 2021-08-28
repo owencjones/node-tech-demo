@@ -1,7 +1,8 @@
-import {
+const {
     currencyToUSD,
-    usdToCurrency
-} from '../lib/convertors';
+    usdToCurrency,
+    currencyToCurrency
+} = require('../lib/convertors');
 
 describe('Convertor tests', () => {
     describe('usdToCurrency', () => {
