@@ -1,10 +1,10 @@
 const express = require('express');
 
-const euroToDollarRouter = require('./routes/euroToDollars')
+const ratesRouter = require('./routes/rates')
 
 const app = express();
 
-app.use(euroToDollarRouter)
+app.use(ratesRouter)
 
 const port = process.env.PORT || 8080;
 app.listen(port, () => {
