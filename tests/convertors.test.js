@@ -5,7 +5,8 @@ const {
 
     requireValidNumber,
     requireValidCurrencyCode,
-    requireValidCurrencyObject
+    requireValidCurrencyObject,
+    reverseCurrencyFromToRates
 } = require('../lib/convertors');
 const { InputException } = require('../lib/exceptions');
 
@@ -90,6 +91,16 @@ describe('Convertor tests', () => {
             });
         });
     });
+
+    describe('reverseCurrencyFromToRates', () => {
+        it ('should return a valid reversed from and to rate when passed valid input', () => {
+            expect(reverseCurrencyFromToRates(2)).toBe(0.5)
+        });
+
+        it('should throw error if not passed a number', () => {
+            expect(() => reverseCurrencyFromToRates('not a number')).toThrow();
+        })
+    })
 
     describe('Utility functions', () => {
         describe('requireValidNumber', () => {
