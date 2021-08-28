@@ -7,7 +7,9 @@ rates.get('/rates/eur/usd', (req, res) => {
     const eurUsdRate = reverseCurrencyFromToRates(ratesData.EUR);
 
     res.json({
-        EURUSD: eurUsdRate.toFixed(5)
+        from: 'EUR',
+        to: 'USD',
+        rate: eurUsdRate.toFixed(5)
     })
 });
 
