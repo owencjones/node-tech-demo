@@ -11,4 +11,8 @@ describe('Convertor tests', () => {
     describe('currencyToUSD', () => {
         it.todo('tests');
     });
+
+    describe('currencyToCurrency', () => {
+        it.todo('tests');
+    });
 });
