@@ -16,5 +16,8 @@
     "url": "github.com:owencjones/node-tech-demo.git"
   },
   "author": "Owen C Jones",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
