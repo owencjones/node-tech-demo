@@ -1,6 +1,6 @@
 const express = require('express');
 
-const { euroToDollarRouter } = require('routes/euroToDollar')
+const euroToDollarRouter = require('./routes/euroToDollars')
 
 const app = express();
 

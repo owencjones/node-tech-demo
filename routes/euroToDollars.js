@@ -1,8 +1,9 @@
 const { Router } = require('express');
 
 const euroToDollarRouter = Router();
-euroToDollarRouter.get('/euroToDollars', (req, res) => {
+euroToDollarRouter.get('/eur/usd', (req, res) => {
     //TODO
+    res.send('OK')
 });
 
-export const euroToDollarRouter;
+module.exports = euroToDollarRouter;
