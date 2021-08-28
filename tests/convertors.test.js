@@ -91,7 +91,7 @@ describe('Convertor tests', () => {
         });
     });
 
-    describe('Utility functions', () => {
+    describe.only('Utility functions', () => {
         describe('requireValidNumber', () => {
             it('should return if passed a number', () => expect(() => requireValidNumber(15)).not.toThrow());
 
