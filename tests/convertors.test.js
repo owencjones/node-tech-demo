@@ -99,7 +99,7 @@ describe('Convertor tests', () => {
         });
 
         describe('requireValidCurrencyCode', () => {
-            it ('should return nothing if passed a currency code', () => expect(() => requireValidCurrencyCode('ABC')).not.toThrow());
+            it('should return nothing if passed a currency code', () => expect(() => requireValidCurrencyCode('ABC')).not.toThrow());
 
             it('should throw an input error if passed a non string', () => expect(() => requireValidCurrencyCode(1)).toThrow(InputException));
 
@@ -107,11 +107,11 @@ describe('Convertor tests', () => {
 
             it('should throw an input error if passed a too-long string', () => expect(() => requireValidCurrencyCode('ABCD')).toThrow(InputException));
 
-            it('should throw an input error if passed a string containing invalid characters', () => expect(requireValidCurrencyCode('AB1')).toThrow(InputException));
+            it('should throw an input error if passed a string containing invalid characters', () => expect(() => requireValidCurrencyCode('AB1')).toThrow(InputException));
         });
 
         describe('requireValidCurrencyObject', () => {
-            it('should return if the object is valid', () => expect(() => requireValidCurrencyObject({ABC: 1})))
+            it('should return if the object is valid', () => expect(() => requireValidCurrencyObject({ABC: 1})).not.toThrow())
 
             it('should require an Object', () => expect(() => requireValidCurrencyObject('ABC')).toThrow(InputException));
 
