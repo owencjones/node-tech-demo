@@ -21,7 +21,7 @@ describe('Convertor tests', () => {
     describe('usdToCurrency', () => {
         describe('Happy path scenarios', () => {
             it('should correctly convert an amount of USD to a currency', () => {
-                expect(usdToCurrency(15, 'ABC', exampleConversionData)).toBe(30)
+                expect(usdToCurrency(15, 'ABC', exampleConversionData)).toBe(7.5)
             })
         });
 
@@ -43,7 +43,7 @@ describe('Convertor tests', () => {
     describe('currencyToUSD', () => {
         describe('Happy path scenarios', () => {
             it('should correctly convert an amount of currency to USD', () => {
-                expect(currencyToUSD(15, 'ABC', exampleConversionData)).toBe(7.5)
+                expect(currencyToUSD(15, 'ABC', exampleConversionData)).toBe(30)
             })
         });
 
@@ -65,11 +65,11 @@ describe('Convertor tests', () => {
     describe('currencyToCurrency', () => {
         describe('Happy path scenarios', () => {
             it('should correctly convert an ABC to DEF', () => {
-                expect(currencyToCurrency(15, 'ABC', 'DEF', exampleConversionData)).toBe(10)
+                expect(currencyToCurrency(15, 'ABC', 'DEF', exampleConversionData)).toBe(22.5)
             });
 
             it('should correctly convert an DEF to GHI', () => {
-                expect(currencyToCurrency(15, 'DEF', 'GHI', exampleConversionData)).toBe(14.0625)
+                expect(currencyToCurrency(15, 'DEF', 'GHI', exampleConversionData)).toBe(16)
             })
         });
 
