@@ -4,16 +4,17 @@
 
 ## Introduction
 
-Welcome, this tech demo was done to demonstrate my Node, and coding ability, for a position with Equal Experts.  Fair warning, it was done over the course of a couple of days, whilst looking after my kids, so hopefully it reaches the standards you hope for.  In total, I spent around 1.5 - 2 hours looking at the task.
+Welcome, this tech demo was done to demonstrate my Node, and coding ability, for a position with Equal Experts.  Fair warning, it was done over the course of a couple of days, whilst looking after my kids, so hopefully it reaches the standards you hope for.  In total, I spent around 2 hours looking at the task.
 
 There are parts I would expand, and I have noted these later in the README.
 
 A few notes:
 
-* From my own preference, I've aimed to use the most used packages for the tasks that require external dependencies.  For example, I've used express.js, rather than Hapi.js or another library, simply because you're most likely to know the syntax already.
-* I added ESLint, Prettier, and the ESLint AirBnB plugin, which integrate nicely with my editor, but I've not created NPM tasks for these, because my dev environment will work with them anyway.
-* I used Jest for testing, just because it's what I've used most recently.
-* I aimed overall to minimise dependencies.  The codebase has 6 dependencies in total, but can be deployed with just one (Express) - the other 5 are development tools, and 3 of them are ESLint.
+* I've aimed to use best known libraries, rather than newest.  This is just to increase likelihood that those that have to deal with the code are already familiar with it.
+* I added some linting tooling with a common set of rules, this works out of the box with my editor, and helped to maintain code consistency.
+* I used Jest for testing, because I've been using it recently on a project, so it's fresh in the mind.
+* I aimed overall to minimise dependencies.  The codebase has 7 dependencies in total, but can be deployed with just one (Express) - the others are development tools.  Even these could be eliminated.
+* Routes files haven't been tested, because I don't test implementation, just function, but overall coverage is 98%, and tests are atomic.
 
 ## Dependencies
 
@@ -66,7 +67,7 @@ Again, this could be generalised easily, and I've deliberately avoided implement
 }
 ```
 
-## "Extend your solution to convert Euro to British Pounds"
+### "Extend your solution to convert Euro to British Pounds"
 
 I added this to the same router as the last task, and it outputs the same schema of JSON object.  It's found at `/convert/eur/gbp/:amount`.
 
@@ -85,7 +86,7 @@ The other aspect of this was that the schema of the URLs is designed to separate
 }
 ```
 
-## "Extend your solution to add 13.12 Euro to 99 British Pounds and return 185.64 CAD"
+### "Extend your solution to add 13.12 Euro to 99 British Pounds and return 185.64 CAD"
 
 For this I created a different router, as it performs a different function, and called it `routes/arithmetic.js`, and this provides the endpoint `/add`.  I considered parameterising this, but the requirements didn't call for this, so it just returns a JSON object containing details of the addition, and the result.
 
@@ -100,3 +101,8 @@ The only aspect of this that wasn't out of the box was the number of decimal pla
     }
 }
 ```
+
+## Improvements I would make
+
+* E2E testing with something like supertest, to cover the functionality of the controllers.
+* Move validation into controllers, and use something like Joi to validate the user input.
